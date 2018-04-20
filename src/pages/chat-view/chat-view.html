@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title style="margin-top: 7px">{{sender_info.name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content #content>
+
+    <div class='list' [style.height]="height" id="chat-autoscroll">
+        <ion-list no-padding no-lines>
+            <ion-item>
+                <div class="bubble you">
+                    <h3 highlight style="font-size: 1.5rem; color:gray">Hello</h3>
+                </div>
+
+                <div class="bubble me">
+                    <h3 highlight style="font-size: 1.5rem;color:gray">Hi</h3>
+                </div>
+
+            </ion-item>
+
+            <ion-item>
+                <div class="bubble you">
+                    <h3 highlight style="font-size: 1.5rem; color:gray">How are you?</h3>
+                </div>
+
+                <div class="bubble me">
+                    <h3 highlight style="font-size: 1.5rem;color:gray">M good</h3>
+                </div>
+
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>
+<div fixed class='foot'>
+    <ion-toolbar [style.bottom]="bottom">
+
+
+        <ion-item class='boundary'>
+            <ion-textarea [(ngModel)]="msg" #sendInput placeholder="Write your message ..." style="font-size: 18px;"></ion-textarea>
+        </ion-item>
+
+        <ion-buttons right (click)="sendMessage()">
+            <button ion-button icon-only>
+                  <ion-icon color="primary" name="send"></ion-icon>
+          </button>
+
+        </ion-buttons>
+    </ion-toolbar>
+
+
+</div>
